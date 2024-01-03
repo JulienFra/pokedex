@@ -65,6 +65,12 @@ const query = gql`
           }
         }
       }
+      localisation {
+        nom
+        image {
+          url
+        }
+      }
     }
   }
 `;
@@ -364,6 +370,16 @@ const hideCardPopup = () => {
         >
           {{ pokemon.description }}
         </p>
+        <div class="text-center">
+          <h2 class="text-3xl font-semibold mb-4 text-gray-800">
+            {{ pokemon.localisation.nom }}
+          </h2>
+          <NuxtImg
+            :src="pokemon.localisation.image.url"
+            :alt="pokemon.localisation.nom"
+            class="border-4 rounded-lg shadow-md mx-auto w-96"
+          />
+        </div>
       </div>
     </div>
     <div v-else>
