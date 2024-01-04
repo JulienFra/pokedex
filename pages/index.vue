@@ -118,7 +118,7 @@ const types = computed(() => {
         <NuxtImg
           :src="selectedPokemon.image.url"
           :alt="selectedPokemon.nom"
-          class="object-contain h-full border-8 border"
+          class="object-contain h-full border-8 border-green-400"
         />
       </div>
       <div v-else class="text-center mt-4">
