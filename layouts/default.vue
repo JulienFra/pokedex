@@ -8,7 +8,7 @@
     <nav class="bg-gradient-to-r from-red-500 to-yellow-500">
       <div class="container mx-auto px-4 h-24 flex items-center mb-10">
         <NuxtLink to="/">
-          <h1 class="text-4xl text-white font-bold mr-8">Pokedex</h1>
+          <h1 class="text-4xl text-black font-bold mr-8">Pokedex</h1>
         </NuxtLink>
         <NuxtLink to="/localisation">
           <h2 class="text-2xl text-white">Voir les localisations</h2>
