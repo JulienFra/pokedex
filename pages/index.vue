@@ -68,7 +68,7 @@ const types = computed(() => {
   <div class="pokedex flex h-screen">
     <!-- Écran de gauche avec la liste des noms et la barre de recherche -->
     <div
-      class="w-1/4 bg-gradient-to-r from-red-500 to-yellow-500 p-4 h-4/5 overflow-auto"
+      class="w-1/4 bg-gradient-to-r from-red-500 to-yellow-500 p-4 h-3/5 overflow-auto"
     >
       <!-- Barre de recherche -->
       <input
@@ -110,7 +110,7 @@ const types = computed(() => {
     </div>
 
     <!-- Écran de droite avec l'image et le nom du Pokémon sélectionné -->
-    <div class="pokemon-details flex-1 ml-4 h-4/5">
+    <div class="pokemon-details flex-1 ml-4 h-3/5">
       <div
         v-if="selectedPokemon"
         class="flex justify-center items-center w-full h-full"
