@@ -22,18 +22,26 @@ localisations.value = data.value.localisations;
 </script>
 
 <template>
-  <ul
-    v-if="localisations"
-    class="grid gap-8 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6"
-  >
-    <li v-for="localisation in localisations" :key="localisation.slug">
-      <NuxtLink :to="`/localisation/${localisation.slug}`">
-        <NuxtImg :src="localisation.image.url" :alt="localisation.nom" />
-        <h2 class="text-3xl text-center">{{ localisation.nom }}</h2>
-      </NuxtLink>
-    </li>
-  </ul>
-  <ul v-else>
-    <li>Loading...</li>
-  </ul>
+  <div class="bg-gray-100 p-8">
+    <ul
+      v-if="localisations"
+      class="grid gap-8 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8"
+    >
+      <li v-for="localisation in localisations" :key="localisation.slug">
+        <NuxtLink :to="`/localisations/${localisation.slug}`">
+          <div class="text-center">
+            <NuxtImg
+              :src="localisation.image.url"
+              :alt="localisation.nom"
+              class="w-full h-48 object-cover rounded-md mb-2"
+            />
+            <h2 class="text-lg text-black">{{ localisation.nom }}</h2>
+          </div>
+        </NuxtLink>
+      </li>
+    </ul>
+    <ul v-else>
+      <li class="text-center text-gray-600">Loading...</li>
+    </ul>
+  </div>
 </template>

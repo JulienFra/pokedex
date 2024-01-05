@@ -67,6 +67,7 @@ const query = gql`
       }
       localisation {
         nom
+        slug
         image {
           url
         }
@@ -97,6 +98,8 @@ const getTypeBackgroundColor = (type) => {
       return "#E0E0E0"; // Blanc pastel
     case "Electrique":
       return "#FFF9B3"; // Jaune pastel
+    case "Poison":
+      return "#D8B3FF";
     case "Roche":
       return "#D2B48C"; // Brun pastel
     default:
@@ -374,11 +377,14 @@ const hideCardPopup = () => {
           <h2 class="text-3xl font-semibold mb-4 text-gray-800">
             {{ pokemon.localisation.nom }}
           </h2>
-          <NuxtImg
-            :src="pokemon.localisation.image.url"
-            :alt="pokemon.localisation.nom"
-            class="border-4 rounded-lg shadow-md mx-auto w-96"
-          />
+          <!-- Ajoute la balise NuxtLink pour rendre l'image clickable -->
+          <NuxtLink :to="`/localisations/${pokemon.localisation.slug}`">
+            <NuxtImg
+              :src="pokemon.localisation.image.url"
+              :alt="pokemon.localisation.nom"
+              class="border-4 rounded-lg shadow-md mx-auto w-96 cursor-pointer"
+            />
+          </NuxtLink>
         </div>
       </div>
     </div>
