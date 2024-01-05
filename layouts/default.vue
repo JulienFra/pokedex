@@ -1,6 +1,6 @@
 <template>
   <div
-    class="min-h-screen bg-cover bg-center bg-no-repeat relative"
+    class="bg-cover bg-center bg-no-repeat relative"
     style="
       background-image: url('/images/_9c2088ca-b682-43dc-9370-439a88a262a9.jpg');
     "
@@ -18,5 +18,48 @@
     <div class="container mx-auto px-3 text-white">
       <slot />
     </div>
+    <footer class="bg-gray-800 text-white text-center py-4">
+      <button
+        @click="showContactPopup"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Contact
+      </button>
+      <!-- Contact Popup -->
+      <div
+        v-if="showPopup"
+        class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75"
+      >
+        <div class="bg-white p-8 max-w-md mx-auto rounded-md">
+          <h2 class="text-2xl font-bold mb-4 text-black">Contactez-nous</h2>
+          <p class="mb-4 text-black">
+            Retrouvez-nous sur les réseaux sociaux :
+          </p>
+          <div class="flex justify-around">
+            <a href="#" class="text-blue-500 hover:underline">Facebook</a>
+            <a href="#" class="text-blue-400 hover:underline">Twitter</a>
+            <a href="#" class="text-red-500 hover:underline">Instagram</a>
+          </div>
+          <button
+            @click="closeContactPopup"
+            class="mt-8 bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Fermer
+          </button>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
+
+<script setup>
+const showPopup = ref(false);
+
+const showContactPopup = () => {
+  showPopup.value = true;
+};
+
+const closeContactPopup = () => {
+  showPopup.value = false;
+};
+</script>

@@ -29,7 +29,7 @@ localisation.value = data.value.localisation;
 </script>
 
 <template>
-  <div v-if="localisation" class="flex p-8 bg-white shadow-lg rounded-lg">
+  <div v-if="localisation" class="flex p-8 bg-white shadow-lg rounded-lg mb-8">
     <!-- Left Section: Localisation Image -->
     <div class="w-1/2 pr-8">
       <NuxtImg

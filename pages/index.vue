@@ -65,10 +65,10 @@ const types = computed(() => {
 </script>
 
 <template>
-  <div class="pokedex flex h-screen">
+  <div class="pokedex flex h-screen mb-12">
     <!-- Écran de gauche avec la liste des noms et la barre de recherche -->
     <div
-      class="w-1/4 bg-gradient-to-r from-red-500 to-yellow-500 p-4 h-3/5 overflow-auto"
+      class="w-1/4 bg-gradient-to-r from-red-500 to-yellow-500 p-4 h-full overflow-auto"
     >
       <!-- Barre de recherche -->
       <input
@@ -96,7 +96,7 @@ const types = computed(() => {
       </div>
 
       <!-- Liste des noms de Pokémon -->
-      <ul class="pokemon-list">
+      <ul class="pokemon-list mb-4">
         <li v-for="pokemon in filteredPokemons" :key="pokemon.id" class="mb-4">
           <NuxtLink
             :to="`/pokemon/${pokemon.slug}`"
@@ -110,7 +110,7 @@ const types = computed(() => {
     </div>
 
     <!-- Écran de droite avec l'image et le nom du Pokémon sélectionné -->
-    <div class="pokemon-details flex-1 ml-4 h-3/5">
+    <div class="pokemon-details flex-1 ml-4 h-full">
       <div
         v-if="selectedPokemon"
         class="flex justify-center items-center w-full h-full"
