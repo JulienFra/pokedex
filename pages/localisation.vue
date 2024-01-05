@@ -22,8 +22,8 @@ localisations.value = data.value.localisations;
 </script>
 
 <template>
-  <div class="bg-gray-100 p-8 min-h-screen">
-    <div class="max-h-screen overflow-y-auto mb-8">
+  <div class="p-8 min-h-screen">
+    <div class="bg-gray-100 max-h-screen overflow-y-auto mb-8 p-4 rounded">
       <!-- Ajout de max-h-screen et overflow-y-auto -->
       <ul
         v-if="localisations"
