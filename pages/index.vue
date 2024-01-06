@@ -16,7 +16,7 @@ const query = gql`
         url(
           transformation: {
             document: { output: { format: webp } }
-            image: { resize: { fit: crop, height: 256, width: 256 } }
+            image: { resize: { fit: crop, height: 1024, width: 1024 } }
           }
         )
       }
@@ -119,7 +119,7 @@ const types = computed(() => {
         <NuxtImg
           :src="selectedPokemon.image.url"
           :alt="selectedPokemon.nom"
-          class="w-94 h-full object-contain border-8 border-green-400"
+          class="h-full object-cover border-8 border-green-400"
         />
       </div>
       <div v-else class="text-center mt-4">
