@@ -119,7 +119,7 @@ const types = computed(() => {
         <NuxtImg
           :src="selectedPokemon.image.url"
           :alt="selectedPokemon.nom"
-          class="object-contain h-3/6 border-8 border-green-400"
+          class="w-96 h-96 object-cover border-8 border-green-400"
         />
       </div>
       <div v-else class="text-center mt-4">
